@@ -20,6 +20,7 @@ if (program.args.length !== 1) {
   program.outputHelp();
 }
 
+console.time("pnr-scan");
 const directory = path.join(process.cwd(), program.args[0]);
 Finder.findPnrs(directory, program.pattern).forEach(item => {
   console.log(item.file);
@@ -27,3 +28,4 @@ Finder.findPnrs(directory, program.pattern).forEach(item => {
     console.log(`    ${hit.pnr} on line ${hit.line}`);
   });
 });
+console.timeEnd("pnr-scan");
