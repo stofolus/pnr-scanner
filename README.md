@@ -1,8 +1,8 @@
 # pnr-scanner [![CircleCI](https://circleci.com/gh/stofolus/pnr-scanner/tree/master.svg?style=svg)](https://circleci.com/gh/stofolus/pnr-scanner/tree/master)
 
-> Find Swedish social security numbers (personnummer) in your code
+> Find Swedish personal identity numbers (personnummer) in your code
 
-_Due to GDPR it's more important than ever to not have personal information outside of your production environment. This project aims to help people find and fix Swedish SSNs (personnummer) in code (or any textfiles)_
+_Due to GDPR it's more important than ever to not have personal information outside of your production environment. This project aims to help people find and fix Swedish personal identity numbers (personnummer) in code (or any textfiles)_
 
 ---
 
@@ -40,4 +40,4 @@ $ pnr-scanner .
 
 ## Todo
 
-* `--fix` - an option that helps the user to fix any real SSNs with test data
+* `--fix` - an option that helps the user to fix any real Swedish personal identity numbers with test data
