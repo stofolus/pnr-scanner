@@ -40,4 +40,4 @@ $ pnr-scanner .
 
 ## Todo
 
-* `--fix` - an option that helps the user to fix any real Swedish personal identity numbers with test data
+* Imporve `--fix` to select test data smarter. Perhaps with the same birth date.
