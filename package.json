@@ -9,8 +9,9 @@
     "precommit": "lint-staged"
   },
   "keywords": ["GDPR", "personnummer", "SSN"],
-  "author": "Christoffer Hasselberg",
+  "author": { "name": "Christoffer Hasselberg", "email": "stofolus@gmail.com" },
   "license": "MIT",
+  "repository": "stofolus/pnr-scanner",
   "dependencies": {
     "commander": "^2.15.1",
     "glob": "^7.1.2",
