@@ -37,7 +37,3 @@ $ pnr-scanner .
     -p, --pattern <pattern>  Glob pattern default is !(node_modules){,/**}
     -h, --help               output usage information
 ```
-
-## Todo
-
-* Imporve `--fix` to select test data smarter. Perhaps with the same birth date.
