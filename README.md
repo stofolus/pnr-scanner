@@ -37,7 +37,3 @@ $ pnr-scanner .
     -p, --pattern <pattern>  Glob pattern default is !(node_modules){,/**}
     -h, --help               output usage information
 ```
-
-## Todo
-
-* `--fix` - an option that helps the user to fix any real Swedish personal identity numbers with test data
