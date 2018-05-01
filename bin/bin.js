@@ -8,7 +8,7 @@ const Fixer = require(`../lib/fixer`);
 
 program
   .version(pkg.version)
-  .usage(`<directory> [options]`)
+  .usage(`<directories or files> [options]`)
   .option(`-v, --verbose`, `Enable verbose logging`)
   .option(
     `-p, --pattern <pattern>`,
@@ -17,14 +17,17 @@ program
   .option(`-f, --fix`, `Replace real pnrs with test pnrs`)
   .parse(process.argv);
 
-if (program.args.length !== 1) {
+if (program.args.length < 1) {
   console.log(`Wrong number of arguments`);
   program.outputHelp();
 }
 
 console.time("pnr-scan");
-const directory = path.join(process.cwd(), program.args[0]);
-const result = Finder.findPnrs(directory, program.pattern);
+let result = [];
+for (const arg of program.args) {
+  const directory = path.join(process.cwd(), arg);
+  result = result.concat(Finder.findPnrs(directory, program.pattern));
+}
 console.timeEnd("pnr-scan");
 
 if (program.fix && result.length > 0) {
