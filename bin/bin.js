@@ -8,7 +8,7 @@ const Fixer = require(`../lib/fixer`);
 
 program
   .version(pkg.version)
-  .usage(`<directories or files> [options]`)
+  .usage(`<paths ...> [options]`)
   .option(`-v, --verbose`, `Enable verbose logging`)
   .option(
     `-p, --pattern <pattern>`,
