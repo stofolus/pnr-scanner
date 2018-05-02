@@ -28,7 +28,7 @@ $ pnr-scanner .
 ### Options
 
 ```
-  Usage: pnr-scanner <directory> [options]
+  Usage: pnr-scanner <directories or files> [options]
 
   Options:
 
