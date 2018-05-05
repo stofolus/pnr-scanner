@@ -34,7 +34,8 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
-      "!**/coverage/**"
+      "!**/coverage/**",
+      "!**/integration/**"
     ]
   }
 }
