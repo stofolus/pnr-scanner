@@ -5,6 +5,8 @@ const program = require(`commander`);
 const path = require(`path`);
 const Finder = require(`../lib/finder`);
 const Fixer = require(`../lib/fixer`);
+const Logger = require(`../lib/logger/logger`);
+const logger = new Logger(`bin.js`);
 
 program
   .version(pkg.version)
@@ -17,8 +19,13 @@ program
   .option(`-f, --fix`, `Replace real pnrs with test pnrs`)
   .parse(process.argv);
 
+if (program.verbose) {
+  Logger.setLevel(Logger.levels.DEBUG);
+  logger.debug(`Verbose mode on`);
+}
+
 if (program.args.length < 1) {
-  console.log(`Wrong number of arguments`);
+  logger.warning(`Wrong number of arguments`);
   program.outputHelp();
 }
 
@@ -37,12 +44,12 @@ if (program.fix && result.length > 0) {
 }
 
 result.forEach(item => {
-  console.log(item.file);
+  logger.print(item.file);
   item.results.forEach(hit => {
     if (hit.replacement) {
-      console.log(`    ${hit.pnr} => ${hit.replacement} on line ${hit.line}`);
+      logger.print(`    ${hit.pnr} => ${hit.replacement} on line ${hit.line}`);
     } else {
-      console.log(`    ${hit.pnr} on line ${hit.line}`);
+      logger.print(`    ${hit.pnr} on line ${hit.line}`);
     }
   });
 });
