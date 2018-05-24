@@ -18,7 +18,8 @@
   "dependencies": {
     "commander": "^2.15.1",
     "glob": "^7.1.2",
-    "istextorbinary": "^2.2.1"
+    "istextorbinary": "^2.2.1",
+    "luxon": "^1.2.1"
   },
   "devDependencies": {
     "husky": "^0.14.3",
