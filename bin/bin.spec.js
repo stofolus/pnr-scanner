@@ -18,9 +18,14 @@ mockConsole = {
   time: jest.fn(),
   timeEnd: jest.fn()
 };
+mockFs = {
+  existsSync: jest.fn(() => true)
+};
 
 jest.mock(`../lib/finder`, () => mockFinder);
+jest.mock(`../lib/fixer`, () => {});
 jest.mock(`commander`, () => mockProgram);
+jest.mock(`fs`, () => mockFs);
 global.console = mockConsole;
 
 describe(`bin.js`, () => {

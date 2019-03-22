@@ -6,6 +6,7 @@ const path = require(`path`);
 const Finder = require(`../lib/finder`);
 const Fixer = require(`../lib/fixer`);
 const Logger = require(`../lib/logger/logger`);
+const fs = require(`fs`);
 const logger = new Logger(`bin.js`);
 
 program
@@ -33,6 +34,10 @@ console.time("pnr-scan");
 let result = [];
 for (const arg of program.args) {
   const directory = path.join(process.cwd(), arg);
+  if (!fs.existsSync(directory)) {
+    logger.error(`Error: ${directory} does not exist`);
+    process.exit(1);
+  }
   result = result.concat(Finder.findPnrs(directory, program.pattern));
 }
 console.timeEnd("pnr-scan");
