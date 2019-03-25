@@ -37,3 +37,6 @@ $ pnr-scanner .
     -p, --pattern <pattern>  Glob pattern default is !(node_modules){,/**}
     -h, --help               output usage information
 ```
+
+### Whitelist
+If your project has any false positives that you want to exclude from the search you can place a .pnr-whitelist file in your search root. This file should have one whitelisted pnr per line.
