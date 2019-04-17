@@ -1,6 +1,6 @@
 {
   "name": "pnr-scanner",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description":
     "Finds potentially real Swedish social security numbers (personnummer) ",
   "bin": "bin/bin.js",
@@ -18,12 +18,13 @@
   "dependencies": {
     "commander": "^2.15.1",
     "glob": "^7.1.2",
-    "istextorbinary": "^2.2.1"
+    "istextorbinary": "^2.2.1",
+    "luxon": "^1.2.1"
   },
   "devDependencies": {
     "husky": "^0.14.3",
-    "jest": "^22.4.3",
-    "lint-staged": "^7.0.4",
+    "jest": "^24.7.1",
+    "lint-staged": "^8.1.5",
     "prettier": "1.12.1"
   },
   "lint-staged": {
@@ -34,7 +35,8 @@
     "collectCoverageFrom": [
       "**/*.{js,jsx}",
       "!**/node_modules/**",
-      "!**/coverage/**"
+      "!**/coverage/**",
+      "!**/integration/**"
     ]
   }
 }
