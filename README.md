@@ -18,7 +18,7 @@ $ npx pnr-scanner .
 
 ### Often
 
-If you intend to run this package more than once I suggest you install it globally since this will be alot faster. The downside to this is that you have to update it yourself
+If you intend to run this package more than once I suggest you install it globally since this will be alot faster. The downside to this is that you will have to update it yourself
 
 ```
 $ npm install --global pnr-scanner
@@ -35,8 +35,33 @@ $ pnr-scanner .
     -V, --version            output the version number
     -v, --verbose            Enable verbose logging
     -p, --pattern <pattern>  Glob pattern default is !(node_modules){,/**}
+    -f, --fix                Replace real pnrs with test pnrs
     -h, --help               output usage information
 ```
 
-### Whitelist
+### Config file
+
+You can create a `.pnr-scanner.json` file in your project root to keep custom configuration
+
+#### pattern
+
+Type: `string`
+Default: `!(node_modules){,/**}`
+
+Glob pattern to be used when searching for files. Can be used instead of the `--pattern` option. Using `--pattern` will override this config
+
+#### ignorePattern
+
+Type: `string | array`
+
+One or more glob patterns to be ignored
+
+#### ignorePnr
+
+Type: `string | array`
+
+One or more pnrs to ignore (replaces whitelist).
+
+### Whitelist (Deprecated)
+
 If your project has any false positives that you want to exclude from the search you can place a .pnr-whitelist file in your search root. This file should have one whitelisted pnr per line.

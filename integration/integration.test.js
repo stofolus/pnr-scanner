@@ -11,7 +11,7 @@ beforeAll(() => {
     `${path.join(
       __dirname,
       "../bin/bin.js"
-    )} mockdata/test1 mockdata/test2 mockdata/test3 mockdata/afile.js`,
+    )} mockdata/test1 mockdata/test2 mockdata/test3 mockdata/test5 mockdata/afile.js`,
     { cwd: __dirname }
   ).toString();
   elapsedTime = process.hrtime(start);
@@ -66,11 +66,26 @@ describe("pnr-scanner", () => {
   });
 
   test("Should not find any extra results", () => {
-    expect(result.length).toBe(4);
+    expect(result.length).toBe(5);
   });
 
   test("Should have acceptable performance", () => {
     expect(elapsedTime[0] / 1000 + elapsedTime[1] / 1000000).toBeLessThan(1000);
+  });
+
+  test("Should use .pnr-config.json config", () => {
+    expect(result).not.toContainEqual({
+      file: path.join(__dirname, "./mockdata/test5/ignore/pnr.txt"),
+      results: expect.any(Array)
+    });
+    expect(result).toContainEqual({
+      file: path.join(__dirname, "./mockdata/test5/data/data.txt"),
+      results: ["19121212-1212 on line 1"]
+    });
+    expect(result).not.toContainEqual({
+      file: path.join(__dirname, "./mockdata/test5/data/ignore.txt"),
+      results: expect.any(Array)
+    });
   });
 });
 

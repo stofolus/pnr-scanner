@@ -1,0 +1,4 @@
+{
+  "ignorePath": ["ignore/**", "**/ignore.txt"],
+  "ignorePnr": ["201212121212"]
+}
