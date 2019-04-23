@@ -60,7 +60,7 @@ One or more glob patterns to be ignored
 
 Type: `string | array`
 
-One or more pnrs to ignore (replaces whitelist). Pnrs have to be in format `YYYYMMDDXXXX`
+One or more pnrs to ignore (replaces whitelist).
 
 ### Whitelist (Deprecated)
 
