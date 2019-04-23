@@ -22,7 +22,7 @@ If you intend to run this package more than once I suggest you install it global
 
 ```
 $ npm install --global pnr-scanner
-$ npx pnr-scanner .
+$ pnr-scanner .
 ```
 
 ### Options
