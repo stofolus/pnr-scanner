@@ -50,7 +50,7 @@ Default: `!(node_modules){,/**}`
 
 Glob pattern to be used when searching for files. Can be used instead of the `--pattern` option. Using `--pattern` will override this config
 
-#### ignorePattern
+#### ignorePath
 
 Type: `string | array`
 
